@@ -78,6 +78,29 @@
             font-size: 1.2rem;
         }
         
+        .back-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .back-btn:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
         /* المحتوى الرئيسي مع إمكانية التمرير */
         .main-container {
             flex: 1;
@@ -383,6 +406,11 @@
                 order: 2;
             }
             
+            .back-btn {
+                order: 3;
+                margin-top: 10px;
+            }
+            
             .modal-content {
                 width: 95%;
                 padding: 20px;
@@ -411,6 +439,10 @@
                 <div class="day" id="current-day">السبت</div>
                 <div class="date" id="current-date">٢٥ مايو ٢٠٢٥</div>
             </div>
+            <a href="https://mohdschool.github.io/platform/" class="back-btn">
+                <i class="fas fa-arrow-right"></i>
+                العودة للمنصة
+            </a>
         </div>
     </header>
     
@@ -738,4 +770,3 @@
     </script>
 </body>
 </html>
-
