@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نظام عرض امتحانات نهاية الفصل الدراسي الأول | مدرسة محمد بن سليمان الغافري</title>
+    <title>جدول امتحانات نهاية الفصل الدراسي الأول | منصة تواصل - مدرسة محمد بن سليمان الغافري</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0A4D68;
-            --secondary: #05BFDB;
-            --accent: #FF9F29;
-            --light: #F6F6F6;
-            --dark: #1A1A1A;
+            --primary: #1e3c72;
+            --secondary: #2a5298;
+            --accent: #ffd700;
+            --light: rgba(255, 255, 255, 0.1);
+            --dark: #ffffff;
             --success: #4CAF50;
         }
         
@@ -20,29 +21,31 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'El Messiri', 'Tajawal', sans-serif;
         }
         
         body {
-            background-color: var(--light);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--dark);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
         
-        /* الهيدر المعدل مع الشعار في المنتصف */
+        /* الهيدر المعدل مع ألوان منصة تواصل */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 40px;
-            background: linear-gradient(135deg, var(--primary), #088395);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             color: white;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             position: relative;
             height: 100px;
             flex-shrink: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .logo-container {
@@ -51,13 +54,22 @@
             transform: translateX(-50%);
             display: flex;
             align-items: center;
+            flex-direction: column;
         }
         
         .logo {
-            height: 70px;
+            height: 60px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+            filter: drop-shadow(0 2px 5px rgba(255, 255, 255, 0.7));
+            border-radius: 50%;
+        }
+        
+        .school-name {
+            margin-top: 5px;
+            font-size: 1rem;
+            color: #ffd700;
+            font-weight: bold;
         }
         
         .time-container, .date-container {
@@ -78,27 +90,24 @@
             font-size: 1.2rem;
         }
         
-        .back-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid white;
+        /* زر العودة */
+        .back-button {
+            background: linear-gradient(135deg, #4A90E2, #50A5E2);
             color: white;
+            border: none;
             padding: 10px 20px;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
+            border-radius: 8px;
+            font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
             display: flex;
             align-items: center;
             gap: 8px;
         }
         
-        .back-btn:hover {
-            background: white;
-            color: var(--primary);
+        .back-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
         
         /* المحتوى الرئيسي مع إمكانية التمرير */
@@ -108,6 +117,15 @@
             flex-direction: column;
             padding: 30px;
             overflow-y: auto;
+        }
+        
+        .page-title {
+            text-align: center;
+            color: #ffd700;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         
         .grades-nav {
@@ -120,34 +138,35 @@
         
         .grade-btn {
             padding: 12px 25px;
-            background-color: white;
-            border: none;
-            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid transparent;
+            border-radius: 15px;
             font-size: 1.1rem;
             font-weight: 700;
-            color: var(--primary);
+            color: white;
             cursor: pointer;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             transition: all 0.3s;
-            border: 2px solid transparent;
+            backdrop-filter: blur(10px);
         }
         
         .grade-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-color: #ffd700;
         }
         
         .grade-btn.active {
-            background-color: var(--primary);
-            color: white;
-            border-color: var(--secondary);
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            border-color: #ffd700;
         }
         
         .exam-card {
-            background-color: white;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -155,6 +174,12 @@
             position: relative;
             overflow: hidden;
             margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .exam-card:hover {
+            transform: translateY(-5px);
         }
         
         .exam-card::before {
@@ -163,16 +188,17 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 10px;
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            height: 8px;
+            background: linear-gradient(90deg, var(--accent), #ffed4e);
         }
         
         .exam-title {
-            color: var(--primary);
+            color: var(--accent);
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 30px;
             font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         
         .exam-details {
@@ -183,21 +209,21 @@
         }
         
         .detail-box {
-            background-color: var(--light);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             padding: 25px;
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--secondary);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             transition: transform 0.3s;
         }
         
         .detail-box:hover {
             transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
         }
         
         .detail-label {
-            color: var(--primary);
+            color: var(--accent);
             font-size: 1.2rem;
             margin-bottom: 10px;
             font-weight: 600;
@@ -216,7 +242,7 @@
         
         .countdown-title {
             font-size: 1.5rem;
-            color: var(--primary);
+            color: var(--accent);
             margin-bottom: 20px;
             font-weight: 600;
         }
@@ -235,7 +261,8 @@
             font-size: 2.5rem;
             font-weight: 700;
             min-width: 120px;
-            box-shadow: 0 5px 15px rgba(5, 191, 219, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .countdown-label {
@@ -245,27 +272,27 @@
         }
         
         .exam-in-progress .countdown-box {
-            background: linear-gradient(135deg, #FF6B6B, var(--accent));
+            background: linear-gradient(135deg, #ff6b6b, var(--accent));
         }
         
         .full-schedule-btn {
             display: block;
             margin: 30px auto 0;
             padding: 15px 40px;
-            background: linear-gradient(135deg, var(--accent), #FF6B6B);
-            color: white;
+            background: linear-gradient(135deg, var(--accent), #ffed4e);
+            color: #1e3c72;
             border: none;
             border-radius: 50px;
             font-size: 1.2rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(255, 159, 41, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
         }
         
         .full-schedule-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 159, 41, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
         }
         
         @keyframes pulse {
@@ -276,13 +303,13 @@
         
         .urgent {
             animation: pulse 1.5s infinite;
-            color: #FF6B6B;
+            color: #ff6b6b;
         }
         
         .no-exam {
             text-align: center;
             font-size: 2rem;
-            color: var(--primary);
+            color: var(--accent);
             margin: auto;
             padding: 50px;
         }
@@ -290,7 +317,7 @@
         .footer {
             text-align: center;
             padding: 15px;
-            background-color: var(--dark);
+            background: rgba(0, 0, 0, 0.2);
             color: white;
             font-size: 1rem;
             flex-shrink: 0;
@@ -308,10 +335,11 @@
             z-index: 1000;
             justify-content: center;
             align-items: center;
+            backdrop-filter: blur(5px);
         }
         
         .modal-content {
-            background-color: white;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             width: 90%;
             max-width: 800px;
@@ -320,6 +348,7 @@
             padding: 30px;
             position: relative;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .modal-header {
@@ -328,7 +357,7 @@
             align-items: center;
             margin-bottom: 25px;
             padding-bottom: 15px;
-            border-bottom: 2px solid var(--light);
+            border-bottom: 2px solid rgba(30, 60, 114, 0.2);
         }
         
         .modal-title {
@@ -357,7 +386,7 @@
         }
         
         .schedule-table th {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 15px;
             text-align: center;
@@ -367,15 +396,16 @@
         .schedule-table td {
             padding: 15px;
             text-align: center;
-            border-bottom: 1px solid var(--light);
+            border-bottom: 1px solid rgba(30, 60, 114, 0.1);
+            color: #1e3c72;
         }
         
         .schedule-table tr:nth-child(even) {
-            background-color: #f8f9fa;
+            background-color: rgba(30, 60, 114, 0.05);
         }
         
         .schedule-table tr:hover {
-            background-color: #e9f7fe;
+            background-color: rgba(30, 60, 114, 0.1);
         }
         
         @media (max-width: 1200px) {
@@ -406,11 +436,6 @@
                 order: 2;
             }
             
-            .back-btn {
-                order: 3;
-                margin-top: 10px;
-            }
-            
             .modal-content {
                 width: 95%;
                 padding: 20px;
@@ -426,28 +451,29 @@
 <body>
     <!-- الهيدر مع الشعار في المنتصف -->
     <header class="header">
-        <div class="time-container">
-            <div class="time" id="current-time">٠٨:٠٠:٠٠ ص</div>
-        </div>
+        <button class="back-button" onclick="goBack()">
+            <i class="fas fa-arrow-right"></i>
+            العودة للمنصة
+        </button>
         
         <div class="logo-container">
             <img src="https://j.top4top.io/p_3327lje811.jpg" alt="شعار المدرسة" class="logo">
+            <div class="school-name">منصة تواصل</div>
         </div>
         
-        <div class="date-container">
+        <div class="time-container">
+            <div class="time" id="current-time">٠٨:٠٠:٠٠ ص</div>
             <div class="date-day">
                 <div class="day" id="current-day">السبت</div>
                 <div class="date" id="current-date">٢٥ مايو ٢٠٢٥</div>
             </div>
-            <a href="https://mohdschool.github.io/platform/" class="back-btn">
-                <i class="fas fa-arrow-right"></i>
-                العودة للمنصة
-            </a>
         </div>
     </header>
     
     <!-- المحتوى الرئيسي مع إمكانية التمرير -->
     <main class="main-container">
+        <h1 class="page-title">جدول امتحانات نهاية الفصل الدراسي الأول</h1>
+        
         <nav class="grades-nav">
             <button class="grade-btn active" data-grade="5">الصف الخامس</button>
             <button class="grade-btn" data-grade="6">الصف السادس</button>
@@ -459,7 +485,6 @@
         </nav>
         
         <div class="exam-card">
-            <!-- محتوى بطاقة الامتحان كما هو -->
             <h1 class="exam-title" id="exam-subject">اللغة العربية</h1>
             
             <div class="exam-details">
@@ -482,6 +507,10 @@
             <div class="countdown-container">
                 <div class="countdown-title" id="countdown-title">الوقت المتبقي لبدء الاختبار</div>
                 <div class="countdown-timer">
+                    <div class="countdown-box">
+                        <div id="countdown-days">٠٠</div>
+                        <span class="countdown-label">أيام</span>
+                    </div>
                     <div class="countdown-box">
                         <div id="countdown-hours">٠٠</div>
                         <span class="countdown-label">ساعات</span>
@@ -521,6 +550,11 @@
     </footer>
 
     <script>
+        // دالة العودة لمنصة التواصل
+        function goBack() {
+            window.location.href = "https://mohdschool.github.io/platform/";
+        }
+
         // بيانات امتحانات نهاية الفصل الدراسي الأول - الدور الأول
         const examData = {
             5: [
@@ -667,7 +701,7 @@
             return date.toLocaleDateString('ar-EG');
         }
 
-        // بقية الوظائف كما هي
+        // تحديث الوقت والتاريخ
         function updateDateTime() {
             const now = new Date();
             const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
@@ -679,6 +713,7 @@
             document.getElementById('current-day').textContent = now.toLocaleDateString('ar-EG', dayOptions);
         }
         
+        // تحديث العد التنازلي
         function updateCountdown() {
             const now = new Date();
             const currentGrade = document.querySelector('.grade-btn.active').dataset.grade;
@@ -687,7 +722,8 @@
             let nextExam = null;
             let currentExam = null;
             
-            exams.forEach(exam => {
+            // البحث عن الامتحان الحالي أو القادم
+            for (let exam of exams) {
                 const examDate = new Date(exam.date);
                 const [startH, startM] = exam.startTime.split(':').map(Number);
                 const [endH, endM] = exam.endTime.split(':').map(Number);
@@ -698,10 +734,11 @@
                 
                 if (now >= examDate && now <= endTime) {
                     currentExam = exam;
+                    break;
                 } else if (now < examDate && (!nextExam || examDate < new Date(nextExam.date))) {
                     nextExam = exam;
                 }
-            });
+            }
             
             const examToShow = currentExam || nextExam;
             
@@ -709,17 +746,18 @@
                 document.getElementById('exam-subject').textContent = examToShow.subject;
                 document.getElementById('exam-date').textContent = new Date(examToShow.date).toLocaleDateString('ar-EG');
                 document.getElementById('exam-duration').textContent = examToShow.duration;
-                document.getElementById('exam-start').textContent = `٠${examToShow.startTime} ص`.replace('٠٠', '١٢');
+                document.getElementById('exam-start').textContent = examToShow.startTime + ' ص';
                 
-                const examDate = new Date(examToShow.date);
+                const examDateTime = new Date(examToShow.date);
                 const [startH, startM] = examToShow.startTime.split(':').map(Number);
-                examDate.setHours(startH, startM, 0, 0);
+                examDateTime.setHours(startH, startM, 0, 0);
                 
-                let timeDiff, isExamTime = false;
+                let timeDiff;
+                let isExamTime = false;
                 
                 if (currentExam) {
                     const [endH, endM] = currentExam.endTime.split(':').map(Number);
-                    const endTime = new Date(examDate);
+                    const endTime = new Date(examDateTime);
                     endTime.setHours(endH, endM, 0, 0);
                     
                     timeDiff = endTime - now;
@@ -727,34 +765,42 @@
                     document.getElementById('countdown-title').textContent = "الوقت المتبقي لانتهاء الاختبار";
                     document.querySelector('.exam-card').classList.add('exam-in-progress');
                 } else {
-                    timeDiff = examDate - now;
+                    timeDiff = examDateTime - now;
                     document.getElementById('countdown-title').textContent = "الوقت المتبقي لبدء الاختبار";
                     document.querySelector('.exam-card').classList.remove('exam-in-progress');
                 }
                 
-                const hours = Math.floor(timeDiff / (1000 * 60 * 60));
-                const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-                
-                document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '٠');
-                document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '٠');
-                document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '٠');
-                
-                if (hours < 1) {
-                    document.getElementById('countdown-title').classList.add('urgent');
+                if (timeDiff > 0) {
+                    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+                    
+                    document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
+                    document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+                    document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+                    document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+                    
+                    if (days === 0 && hours < 24) {
+                        document.getElementById('countdown-title').classList.add('urgent');
+                    } else {
+                        document.getElementById('countdown-title').classList.remove('urgent');
+                    }
                 } else {
-                    document.getElementById('countdown-title').classList.remove('urgent');
+                    // إذا انتهى الوقت، تحديث العرض
+                    document.querySelectorAll('.grade-btn').forEach(btn => btn.click());
                 }
             } else {
                 document.querySelector('.exam-card').innerHTML = `
                     <div class="no-exam">
-                        <i class="fas fa-calendar-check" style="font-size: 3rem; color: var(--secondary); margin-bottom: 20px;"></i>
+                        <i class="fas fa-calendar-check" style="font-size: 3rem; color: var(--accent); margin-bottom: 20px;"></i>
                         <div>لا يوجد امتحانات قادمة لهذا الصف</div>
                     </div>
                 `;
             }
         }
         
+        // تبديل الصفوف
         document.querySelectorAll('.grade-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.grade-btn').forEach(b => b.classList.remove('active'));
@@ -763,6 +809,7 @@
             });
         });
         
+        // التهيئة الأولية
         updateDateTime();
         updateCountdown();
         setInterval(updateDateTime, 1000);
