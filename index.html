@@ -232,7 +232,6 @@
     }
     .whatsapp-icon { color: #25D366; font-size: 1.5rem; }
 
-    /* ✅ الهاتف: بطاقات إبداعية وواضحة + تمييز كل يوم عن الثاني + "انتهى" واضح */
     @media (max-width: 768px) {
       .exam-table-container { padding: 12px; }
       .exam-table { min-width: 0 !important; width: 100% !important; display: block; }
@@ -251,7 +250,6 @@
         transform: translateZ(0);
       }
 
-      /* شريط علوي يميز اليوم */
       .exam-table tr::before {
         content: "";
         position: absolute;
@@ -260,7 +258,6 @@
         background: var(--gradient-primary);
       }
 
-      /* شارة حالة كبيرة */
       .badge {
         position: absolute;
         top: 10px;
@@ -307,7 +304,6 @@
 
       .exam-table td > * { text-align: right; }
 
-      /* وضع العداد في سطر كامل */
       .exam-table td[data-label="الحالة"] {
         grid-template-columns: 1fr;
       }
@@ -323,7 +319,6 @@
         gap: 10px;
       }
 
-      /* زر/لمسة لفتح شاشة اليوم */
       .open-daily {
         display: inline-flex;
         align-items: center;
@@ -343,7 +338,6 @@
       .open-daily:active { transform: scale(0.98); }
     }
 
-    /* Modals */
     .modal {
       display: none;
       position: fixed;
@@ -381,7 +375,6 @@
     }
     .close:hover { color: var(--accent-color); }
 
-    /* ✅ شاشة بيانات الاختبار اليومية - التصميم الجديد مع العد التنازلي المدمج */
     .daily-fullscreen .modal-content {
       width: 100%;
       height: 100%;
@@ -424,9 +417,8 @@
       max-width: 1000px;
     }
     
-    /* ✅ تكبير العنوان ليكون بارزًا على الشاشة */
     .daily-main-title {
-      font-size: clamp(2rem, 5vw, 3rem) !important; /* تكبير حجم العنوان */
+      font-size: clamp(2rem, 5vw, 3rem) !important;
       font-weight: 900;
       margin-bottom: 8px;
       text-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
@@ -439,7 +431,7 @@
     }
     
     .daily-sub-title {
-      font-size: clamp(1.2rem, 2.5vw, 1.8rem); /* تكبير العنوان الفرعي */
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
       font-weight: 700;
       margin-bottom: 12px;
       color: var(--gold-color);
@@ -461,8 +453,8 @@
     }
     
     .header-divider {
-      width: 120px; /* زيادة عرض الخط الفاصل */
-      height: 4px; /* زيادة سماكة الخط */
+      width: 120px;
+      height: 4px;
       background: var(--gold-color);
       margin: 15px auto;
       border-radius: 2px;
@@ -496,11 +488,10 @@
       justify-content: flex-start;
     }
     
-    /* ✅ جعل العد التنازلي بجانب البيانات في نفس النسق */
     .exam-status-container {
       display: flex;
       justify-content: center;
-      align-items: stretch; /* لجعل العناصر نفس الارتفاع */
+      align-items: stretch;
       gap: 15px;
       margin-bottom: 25px;
       flex-wrap: wrap;
@@ -560,7 +551,6 @@
       color: white;
     }
     
-    /* ✅ إعادة تصميم حاوية البيانات الرئيسية لتشمل العد التنازلي */
     .exam-data-container {
       background: white;
       border-radius: 20px;
@@ -573,7 +563,7 @@
     }
     
     .exam-subject {
-      font-size: 2.2rem !important; /* تكبير حجم اسم المادة */
+      font-size: 2.2rem !important;
       font-weight: 900;
       color: var(--dark-blue);
       text-align: center;
@@ -583,7 +573,6 @@
       line-height: 1.4;
     }
     
-    /* ✅ إعادة تصميم شبكة التفاصيل لتشمل العد التنازلي */
     .exam-details-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -635,16 +624,15 @@
     }
     
     .detail-value {
-      font-size: 1.6rem !important; /* تكبير حجم القيم */
+      font-size: 1.6rem !important;
       font-weight: 900;
       color: var(--dark-blue);
       line-height: 1.3;
       margin-bottom: 15px;
     }
     
-    /* ✅ العد التنازلي كجزء من بيانات الامتحان */
     .countdown-container {
-      grid-column: 1 / -1; /* يجعل العد التنازلي يأخذ العرض الكامل */
+      grid-column: 1 / -1;
       margin-top: 10px;
     }
     
@@ -667,7 +655,7 @@
     
     .countdown-display {
       font-family: 'Tajawal', monospace;
-      font-size: clamp(2rem, 4vw, 2.8rem) !important; /* تكبير كبير للعد التنازلي */
+      font-size: clamp(2rem, 4vw, 2.8rem) !important;
       font-weight: 900;
       padding: 25px 20px;
       border-radius: 16px;
@@ -749,131 +737,33 @@
       transform: rotate(90deg);
     }
     
-    /* ✅ زر الإغلاق فقط (تم إزالته من الأسفل) */
-    /* تمت إزالة .daily-actions و .daily-btn */
-    
-    /* تحسينات للهواتف */
     @media (max-width: 768px) {
-      .daily-header {
-        padding: 20px 15px;
-        min-height: 140px;
-      }
-      
-      .daily-main-title {
-        font-size: 1.8rem !important; /* تكبير على الهواتف */
-      }
-      
-      .daily-sub-title {
-        font-size: 1.2rem;
-      }
-      
-      .daily-year-info {
-        font-size: 0.9rem;
-        padding: 6px 14px;
-      }
-      
-      .header-divider {
-        width: 100px;
-        height: 3px;
-        margin: 12px auto;
-      }
-      
-      .exam-status-container {
-        flex-direction: column;
-        gap: 12px;
-        margin-bottom: 20px;
-      }
-      
-      .exam-day-display {
-        font-size: 1.6rem;
-        padding: 12px 15px;
-        width: 100%;
-        min-width: unset;
-      }
-      
-      .exam-status-badge {
-        padding: 12px 15px;
-        width: 100%;
-        min-width: unset;
-        font-size: 1.1rem;
-      }
-      
-      .exam-data-container {
-        padding: 20px 15px;
-        margin-bottom: 15px;
-        border-radius: 16px;
-      }
-      
-      .exam-subject {
-        font-size: 1.8rem !important; /* تكبير على الهواتف */
-        margin-bottom: 20px;
-      }
-      
-      .exam-details-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-      }
-      
-      .exam-detail-item {
-        padding: 18px 15px;
-      }
-      
-      .detail-value {
-        font-size: 1.4rem !important; /* تكبير على الهواتف */
-      }
-      
-      .countdown-title {
-        font-size: 1.3rem;
-      }
-      
-      .countdown-display {
-        font-size: 1.8rem !important; /* تكبير على الهواتف */
-        padding: 20px 15px;
-        min-height: 90px;
-      }
-      
-      .close-daily-top {
-        top: 10px;
-        left: 10px;
-        width: 40px;
-        height: 40px;
-        font-size: 1.3rem;
-      }
-      
-      .countdown-hint {
-        font-size: 1rem;
-        padding: 8px 12px;
-      }
+      .daily-header { padding: 20px 15px; min-height: 140px; }
+      .daily-main-title { font-size: 1.8rem !important; }
+      .daily-sub-title { font-size: 1.2rem; }
+      .daily-year-info { font-size: 0.9rem; padding: 6px 14px; }
+      .header-divider { width: 100px; height: 3px; margin: 12px auto; }
+      .exam-status-container { flex-direction: column; gap: 12px; margin-bottom: 20px; }
+      .exam-day-display { font-size: 1.6rem; padding: 12px 15px; width: 100%; min-width: unset; }
+      .exam-status-badge { padding: 12px 15px; width: 100%; min-width: unset; font-size: 1.1rem; }
+      .exam-data-container { padding: 20px 15px; margin-bottom: 15px; border-radius: 16px; }
+      .exam-subject { font-size: 1.8rem !important; margin-bottom: 20px; }
+      .exam-details-grid { grid-template-columns: 1fr; gap: 15px; }
+      .exam-detail-item { padding: 18px 15px; }
+      .detail-value { font-size: 1.4rem !important; }
+      .countdown-title { font-size: 1.3rem; }
+      .countdown-display { font-size: 1.8rem !important; padding: 20px 15px; min-height: 90px; }
+      .close-daily-top { top: 10px; left: 10px; width: 40px; height: 40px; font-size: 1.3rem; }
+      .countdown-hint { font-size: 1rem; padding: 8px 12px; }
     }
     
-    /* تصغير حجم الهيدر لجعل كل شيء ظاهر */
     @media (max-height: 700px) {
-      .daily-header {
-        min-height: 130px;
-        padding: 15px 20px;
-      }
-      
-      .daily-main-title {
-        font-size: 1.6rem !important;
-      }
-      
-      .daily-sub-title {
-        font-size: 1.1rem;
-      }
-      
-      .exam-subject {
-        font-size: 1.6rem !important;
-      }
-      
-      .detail-value {
-        font-size: 1.3rem !important;
-      }
-      
-      .countdown-display {
-        font-size: 1.6rem !important;
-        padding: 18px 15px;
-        min-height: 80px;
-      }
+      .daily-header { min-height: 130px; padding: 15px 20px; }
+      .daily-main-title { font-size: 1.6rem !important; }
+      .daily-sub-title { font-size: 1.1rem; }
+      .exam-subject { font-size: 1.6rem !important; }
+      .detail-value { font-size: 1.3rem !important; }
+      .countdown-display { font-size: 1.6rem !important; padding: 18px 15px; min-height: 80px; }
     }
   </style>
 </head>
@@ -884,7 +774,7 @@
       <div class="header-content">
         <h1>نظام إدارة جداول امتحانات الدبلوم العام</h1>
         <div class="header-subtitle">دائرة القياس والتقويم - محافظة الظاهرة</div>
-        <div class="header-meta">الفصل الدراسي الأول - الدور الأول 2025/2026</div>
+        <div class="header-meta">الفصل الدراسي الثاني - الدور الأول 2025/2026</div>
 
         <div class="header-time-date">
           <div class="header-time" id="currentTime"><i class="fas fa-clock"></i><span>--</span></div>
@@ -901,409 +791,50 @@
     <div class="exam-table-container">
       <table class="exam-table">
         <thead>
-          <tr>
-            <th>اليوم</th>
-            <th>التاريخ</th>
-            <th>المادة</th>
-            <th>وقت الامتحان</th>
-            <th>الحالة</th>
-          </tr>
+          <tr><th>اليوم</th><th>التاريخ</th><th>المادة</th><th>وقت الامتحان</th><th>الحالة</th></tr>
         </thead>
-
         <tbody>
-          <tr id="exam1">
-            <td data-label="اليوم">الأربعاء</td>
-            <td data-label="التاريخ">31/12/2025</td>
-            <td data-label="المادة"><strong>اللغة العربية</strong></td>
-            <td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td>
-            <td data-label="الحالة">
-              <div class="countdown upcoming" id="countdown1">
-                <span class="status-dot dot-upcoming"></span>
-                <span class="countdown-text">--</span>
-              </div>
-              <button class="open-daily" onclick="openDailyForId(1)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button>
-            </td>
-          </tr>
-
-          <tr id="exam2">
-            <td data-label="اليوم">الخميس</td>
-            <td data-label="التاريخ">1/1/2026</td>
-            <td data-label="المادة"><strong>التربية الإسلامية</strong></td>
-            <td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td>
-            <td data-label="الحالة">
-              <div class="countdown upcoming" id="countdown2">
-                <span class="status-dot dot-upcoming"></span>
-                <span class="countdown-text">--</span>
-              </div>
-              <button class="open-daily" onclick="openDailyForId(2)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button>
-            </td>
-          </tr>
-
-          <tr class="holiday">
-            <td>الجمعة</td>
-            <td>2/1/2026</td>
-            <td colspan="3"><strong><i class="fas fa-umbrella-beach"></i> إجازة نهاية الأسبوع</strong></td>
-          </tr>
-
-          <tr class="holiday">
-            <td>السبت</td>
-            <td>3/1/2026</td>
-            <td colspan="3"><strong><i class="fas fa-umbrella-beach"></i> إجازة نهاية الأسبوع</strong></td>
-          </tr>
-
-          <tr id="exam3">
-            <td data-label="اليوم">الأحد</td>
-            <td data-label="التاريخ">4/1/2026</td>
-            <td data-label="المادة"><strong>الرياضيات الأساسية / الرياضيات المتقدمة</strong></td>
-            <td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td>
-            <td data-label="الحالة">
-              <div class="countdown upcoming" id="countdown3">
-                <span class="status-dot dot-upcoming"></span>
-                <span class="countdown-text">--</span>
-              </div>
-              <button class="open-daily" onclick="openDailyForId(3)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button>
-            </td>
-          </tr>
-
-          <tr id="exam4">
-            <td data-label="اليوم">الاثنين</td>
-            <td data-label="التاريخ">5/1/2026</td>
-            <td data-label="المادة"><strong>التاريخ (العالم من حولي)</strong></td>
-            <td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td>
-            <td data-label="الحالة">
-              <div class="countdown upcoming" id="countdown4">
-                <span class="status-dot dot-upcoming"></span>
-                <span class="countdown-text">--</span>
-              </div>
-              <button class="open-daily" onclick="openDailyForId(4)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button>
-            </td>
-          </tr>
-
-          <tr id="exam5">
-            <td data-label="اليوم">الثلاثاء</td>
-            <td data-label="التاريخ">6/1/2026</td>
-            <td data-label="المادة"><strong>الكيمياء</strong></td>
-            <td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td>
-            <td data-label="الحالة">
-              <div class="countdown upcoming" id="countdown5">
-                <span class="status-dot dot-upcoming"></span>
-                <span class="countdown-text">--</span>
-              </div>
-              <button class="open-daily" onclick="openDailyForId(5)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button>
-            </td>
-          </tr>
-
-          <tr id="exam6">
-            <td data-label="اليوم">الأربعاء</td>
-            <td data-label="التاريخ">7/1/2026</td>
-            <td data-label="المادة"><strong>الجغرافيا والتقنيات الحديثة</strong></td>
-            <td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td>
-            <td data-label="الحالة">
-              <div class="countdown upcoming" id="countdown6">
-                <span class="status-dot dot-upcoming"></span>
-                <span class="countdown-text">--</span>
-              </div>
-              <button class="open-daily" onclick="openDailyForId(6)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button>
-            </td>
-          </tr>
-
-          <tr id="exam7">
-            <td data-label="اليوم">الخميس</td>
-            <td data-label="التاريخ">8/1/2026</td>
-            <td data-label="المادة"><strong>الأحياء</strong></td>
-            <td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td>
-            <td data-label="الحالة">
-              <div class="countdown upcoming" id="countdown7">
-                <span class="status-dot dot-upcoming"></span>
-                <span class="countdown-text">--</span>
-              </div>
-              <button class="open-daily" onclick="openDailyForId(7)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button>
-            </td>
-          </tr>
-
-          <tr class="holiday">
-            <td>الجمعة</td>
-            <td>9/1/2026</td>
-            <td colspan="3"><strong><i class="fas fa-umbrella-beach"></i> إجازة نهاية الأسبوع</strong></td>
-          </tr>
-
-          <tr class="holiday">
-            <td>السبت</td>
-            <td>10/1/2026</td>
-            <td colspan="3"><strong><i class="fas fa-umbrella-beach"></i> إجازة نهاية الأسبوع</strong></td>
-          </tr>
-
-          <tr id="exam8">
-            <td data-label="اليوم">الأحد</td>
-            <td data-label="التاريخ">11/1/2026</td>
-            <td data-label="المادة"><strong>الفيزياء</strong></td>
-            <td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td>
-            <td data-label="الحالة">
-              <div class="countdown upcoming" id="countdown8">
-                <span class="status-dot dot-upcoming"></span>
-                <span class="countdown-text">--</span>
-              </div>
-              <button class="open-daily" onclick="openDailyForId(8)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button>
-            </td>
-          </tr>
-
-          <tr id="exam9">
-            <td data-label="اليوم">الإثنين</td>
-            <td data-label="التاريخ">12/1/2026</td>
-            <td data-label="المادة"><strong>العلوم والبيئة</strong></td>
-            <td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td>
-            <td data-label="الحالة">
-              <div class="countdown upcoming" id="countdown9">
-                <span class="status-dot dot-upcoming"></span>
-                <span class="countdown-text">--</span>
-              </div>
-              <button class="open-daily" onclick="openDailyForId(9)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button>
-            </td>
-          </tr>
-
-          <tr id="exam10">
-            <td data-label="اليوم">الثلاثاء</td>
-            <td data-label="التاريخ">13/1/2026</td>
-            <td data-label="المادة"><strong>اللغة الإنجليزية</strong></td>
-            <td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td>
-            <td data-label="الحالة">
-              <div class="countdown upcoming" id="countdown10">
-                <span class="status-dot dot-upcoming"></span>
-                <span class="countdown-text">--</span>
-              </div>
-              <button class="open-daily" onclick="openDailyForId(10)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button>
-            </td>
-          </tr>
-
-          <tr id="exam11">
-            <td data-label="اليوم">الأربعاء</td>
-            <td data-label="التاريخ">14/1/2026</td>
-            <td data-label="المادة"><strong>الدراسات الاجتماعية (هذا وطني)</strong></td>
-            <td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td>
-            <td data-label="الحالة">
-              <div class="countdown upcoming" id="countdown11">
-                <span class="status-dot dot-upcoming"></span>
-                <span class="countdown-text">--</span>
-              </div>
-              <button class="open-daily" onclick="openDailyForId(11)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button>
-            </td>
-          </tr>
+          <tr id="exam1"><td data-label="اليوم">الخميس</td><td data-label="التاريخ">11/6/2026</td><td data-label="المادة"><strong>الرياضيات الأساسية / الرياضيات المتقدمة</strong></td><td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td><td data-label="الحالة"><div class="countdown upcoming" id="countdown1"><span class="status-dot dot-upcoming"></span><span class="countdown-text">--</span></div><button class="open-daily" onclick="openDailyForId(1)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button></td></tr>
+          <tr id="exam2"><td data-label="اليوم">الأحد</td><td data-label="التاريخ">14/6/2026</td><td data-label="المادة"><strong>اللغة العربية</strong></td><td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td><td data-label="الحالة"><div class="countdown upcoming" id="countdown2"><span class="status-dot dot-upcoming"></span><span class="countdown-text">--</span></div><button class="open-daily" onclick="openDailyForId(2)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button></td></tr>
+          <tr id="exam3"><td data-label="اليوم">الاثنين</td><td data-label="التاريخ">15/6/2026</td><td data-label="المادة"><strong>اللغة الإنجليزية</strong></td><td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td><td data-label="الحالة"><div class="countdown upcoming" id="countdown3"><span class="status-dot dot-upcoming"></span><span class="countdown-text">--</span></div><button class="open-daily" onclick="openDailyForId(3)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button></td></tr>
+          <tr id="exam4"><td data-label="اليوم">الثلاثاء</td><td data-label="التاريخ">16/6/2026</td><td data-label="المادة"><strong>التاريخ (العالم من حولي)</strong></td><td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td><td data-label="الحالة"><div class="countdown upcoming" id="countdown4"><span class="status-dot dot-upcoming"></span><span class="countdown-text">--</span></div><button class="open-daily" onclick="openDailyForId(4)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button></td></tr>
+          <tr id="exam5"><td data-label="اليوم">الأربعاء</td><td data-label="التاريخ">17/6/2026</td><td data-label="المادة"><strong>الكيمياء</strong></td><td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td><td data-label="الحالة"><div class="countdown upcoming" id="countdown5"><span class="status-dot dot-upcoming"></span><span class="countdown-text">--</span></div><button class="open-daily" onclick="openDailyForId(5)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button></td></tr>
+          <tr class="holiday"><td data-label="اليوم">الخميس</td><td data-label="التاريخ">18/6/2026</td><td colspan="3"><strong><i class="fas fa-star-and-crescent"></i> إجازة رأس السنة الهجرية</strong></td></tr>
+          <tr class="holiday"><td data-label="اليوم">الجمعة</td><td data-label="التاريخ">19/6/2026</td><td colspan="3"><strong><i class="fas fa-umbrella-beach"></i> إجازة نهاية الأسبوع</strong></td></tr>
+          <tr class="holiday"><td data-label="اليوم">السبت</td><td data-label="التاريخ">20/6/2026</td><td colspan="3"><strong><i class="fas fa-umbrella-beach"></i> إجازة نهاية الأسبوع</strong></td></tr>
+          <tr id="exam6"><td data-label="اليوم">الأحد</td><td data-label="التاريخ">21/6/2026</td><td data-label="المادة"><strong>الفيزياء</strong></td><td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td><td data-label="الحالة"><div class="countdown upcoming" id="countdown6"><span class="status-dot dot-upcoming"></span><span class="countdown-text">--</span></div><button class="open-daily" onclick="openDailyForId(6)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button></td></tr>
+          <tr id="exam7"><td data-label="اليوم">الاثنين</td><td data-label="التاريخ">22/6/2026</td><td data-label="المادة"><strong>التربية الإسلامية</strong></td><td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td><td data-label="الحالة"><div class="countdown upcoming" id="countdown7"><span class="status-dot dot-upcoming"></span><span class="countdown-text">--</span></div><button class="open-daily" onclick="openDailyForId(7)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button></td></tr>
+          <tr id="exam8"><td data-label="اليوم">الثلاثاء</td><td data-label="التاريخ">23/6/2026</td><td data-label="المادة"><strong>العلوم البيئية</strong></td><td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td><td data-label="الحالة"><div class="countdown upcoming" id="countdown8"><span class="status-dot dot-upcoming"></span><span class="countdown-text">--</span></div><button class="open-daily" onclick="openDailyForId(8)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button></td></tr>
+          <tr id="exam9"><td data-label="اليوم">الأربعاء</td><td data-label="التاريخ">24/6/2026</td><td data-label="المادة"><strong>الأحياء</strong></td><td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td><td data-label="الحالة"><div class="countdown upcoming" id="countdown9"><span class="status-dot dot-upcoming"></span><span class="countdown-text">--</span></div><button class="open-daily" onclick="openDailyForId(9)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button></td></tr>
+          <tr id="exam10"><td data-label="اليوم">الخميس</td><td data-label="التاريخ">25/6/2026</td><td data-label="المادة"><strong>الجغرافيا والتقنيات الحديثة</strong></td><td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td><td data-label="الحالة"><div class="countdown upcoming" id="countdown10"><span class="status-dot dot-upcoming"></span><span class="countdown-text">--</span></div><button class="open-daily" onclick="openDailyForId(10)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button></td></tr>
+          <tr class="holiday"><td data-label="اليوم">الجمعة</td><td data-label="التاريخ">26/6/2026</td><td colspan="3"><strong><i class="fas fa-umbrella-beach"></i> إجازة نهاية الأسبوع</strong></td></tr>
+          <tr class="holiday"><td data-label="اليوم">السبت</td><td data-label="التاريخ">27/6/2026</td><td colspan="3"><strong><i class="fas fa-umbrella-beach"></i> إجازة نهاية الأسبوع</strong></td></tr>
+          <tr id="exam11"><td data-label="اليوم">الأحد</td><td data-label="التاريخ">28/6/2026</td><td data-label="المادة"><strong>الدراسات الاجتماعية (هذا وطني)</strong></td><td data-label="وقت الامتحان">8:00 صباحًا - 11:00 صباحًا</td><td data-label="الحالة"><div class="countdown upcoming" id="countdown11"><span class="status-dot dot-upcoming"></span><span class="countdown-text">--</span></div><button class="open-daily" onclick="openDailyForId(11)"><i class="fas fa-expand"></i>عرض شاشة اليوم</button></td></tr>
         </tbody>
-      </table>
+       </table>
     </div>
 
     <footer>
       <p>تم تطوير النظام بواسطة <strong>أكاديمية ملهم التعليمية</strong></p>
       <p>جميع الحقوق محفوظة &copy; 2025</p>
-      <a href="https://wa.me/96895665009" target="_blank" class="whatsapp-link">
-        <i class="fab fa-whatsapp whatsapp-icon"></i>
-        <span>التواصل </span>
-      </a>
+      <a href="https://wa.me/96895665009" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp whatsapp-icon"></i><span>التواصل</span></a>
     </footer>
   </div>
 
   <!-- Modal تعليمات الاختبار -->
-  <div id="instructionsModal" class="modal" role="dialog" aria-labelledby="instructionsTitle" aria-modal="true">
-    <div class="modal-content">
-      <span class="close" aria-label="إغلاق النافذة">&times;</span>
-      <h2 id="instructionsTitle" style="text-align:center;color:var(--dark-blue);margin-bottom:20px;">تعليمات الاختبار الرسمية</h2>
-      
-      <div style="background:rgba(0,86,166,0.06);padding:16px;border-radius:12px;margin-bottom:20px;border-right:4px solid var(--primary-color);">
-        <h3 style="color:var(--primary-color);margin-bottom:10px;"><i class="fas fa-exclamation-circle"></i> معلومات هامة</h3>
-        <p style="color:var(--text-color);font-weight:500;">يرجى الاطلاع على التعليمات التالية بعناية والالتزام بها لضمان سير الاختبارات بسلاسة.</p>
-      </div>
-      
-      <div style="display:grid;gap:14px;max-height:65vh;overflow-y:auto;padding-right:8px;">
-        <div class="info-row">
-          <i class="fas fa-user-tie"></i>
-          <div>
-            <div class="label">الزي الرسمي</div>
-            <div class="value">الالتزام بالزي العُماني الرسمي: الدشداشة البيضاء والمصر والكمة</div>
-          </div>
-        </div>
-        
-        <div class="info-row">
-          <i class="fas fa-tools"></i>
-          <div>
-            <div class="label">الأدوات اللازمة</div>
-            <div class="value">إحضار جميع الأدوات اللازمة لأداء الامتحان: الأقلام، المسطرة، الممحاة، الآلة الحاسبة المسموح بها</div>
-          </div>
-        </div>
-        
-        <div class="info-row">
-          <i class="fas fa-mobile-alt"></i>
-          <div>
-            <div class="label">الأجهزة الإلكترونية</div>
-            <div class="value">يمنع منعًا باتًا إدخال الهواتف النقالة، الأجهزة الذكية، أدوات التصوير، الساعات الإلكترونية، أو أي أدوات غير مصرح بها</div>
-          </div>
-        </div>
-        
-        <div class="info-row">
-          <i class="fas fa-ban"></i>
-          <div>
-            <div class="label">الأدوات الحادة</div>
-            <div class="value">يحظر إدخال الأسلحة أو الأدوات الحادة أو ما يشابهها إلى داخل المركز أو القاعات الامتحانية</div>
-          </div>
-        </div>
-        
-        <div class="info-row">
-          <i class="fas fa-id-card"></i>
-          <div>
-            <div class="label">بطاقة الهوية</div>
-            <div class="value">على كل طالب إحضار بطاقة الهوية الشخصية أو جواز السفر أو رخصة القيادة</div>
-          </div>
-        </div>
-        
-        <div class="info-row">
-          <i class="fas fa-clock"></i>
-          <div>
-            <div class="label">موعد الحضور</div>
-            <div class="value">الحضور قبل نصف ساعة على الأقل من بدء الامتحان، والتواجد في القاعة قبل 10 دقائق</div>
-          </div>
-        </div>
-        
-        <div class="info-row">
-          <i class="fas fa-door-open"></i>
-          <div>
-            <div class="label">مغادرة القاعة</div>
-            <div class="value">لا يسمح بمغادرة قاعة الامتحان قبل انقضاء ثلاثة أرباع زمن الاختبار</div>
-          </div>
-        </div>
-        
-        <div class="info-row">
-          <i class="fas fa-calculator"></i>
-          <div>
-            <div class="label">الآلات الحاسبة</div>
-            <div class="value">يسمح بالآلات الحاسبة العلمية فقط التي لا تكون قابلة للبرمجة والتخزين</div>
-          </div>
-        </div>
-        
-        <div class="info-row">
-          <i class="fas fa-pen"></i>
-          <div>
-            <div class="label">أقلام الكتابة</div>
-            <div class="value">استخدام الأقلام الجافة الزرقاء والسوداء، ويفضل استخدام قلم رصاص في الأسئلة الموضوعية</div>
-          </div>
-        </div>
-        
-        <div class="info-row">
-          <i class="fas fa-user-clock"></i>
-          <div>
-            <div class="label">التأخير عن الامتحان</div>
-            <div class="value">لا يسمح بالدخول إلى القاعة بعد مرور 15 دقيقة من بدء الوقت إلا بإذن من رئيس المركز</div>
-          </div>
-        </div>
-      </div>
-      
-      <div style="margin-top:20px;padding:14px;background:linear-gradient(135deg, rgba(212,175,55,0.12), rgba(42,157,143,0.08));border-radius:12px;border:1px solid rgba(212,175,55,0.25);">
-        <p style="text-align:center;font-weight:800;color:var(--dark-blue);margin:0;">
-          نرجوا لجميع الطلاب التوفيق والنجاح في امتحاناتهم، ونسأل الله أن يوفق الجميع لما فيه الخير والفلاح
-        </p>
-      </div>
-    </div>
+  <div id="instructionsModal" class="modal">
+    <div class="modal-content"><span class="close">&times;</span><h2 style="text-align:center;color:var(--dark-blue);margin-bottom:20px;">تعليمات الاختبار الرسمية</h2><div style="background:rgba(0,86,166,0.06);padding:16px;border-radius:12px;margin-bottom:20px;border-right:4px solid var(--primary-color);"><h3 style="color:var(--primary-color);margin-bottom:10px;"><i class="fas fa-exclamation-circle"></i> معلومات هامة</h3><p style="color:var(--text-color);font-weight:500;">يرجى الاطلاع على التعليمات التالية بعناية والالتزام بها لضمان سير الاختبارات بسلاسة.</p></div><div style="display:grid;gap:14px;max-height:65vh;overflow-y:auto;padding-right:8px;"><div class="info-row"><i class="fas fa-user-tie"></i><div><div class="label">الزي الرسمي</div><div class="value">الالتزام بالزي العُماني الرسمي: الدشداشة البيضاء والمصر والكمة</div></div></div><div class="info-row"><i class="fas fa-tools"></i><div><div class="label">الأدوات اللازمة</div><div class="value">إحضار جميع الأدوات اللازمة لأداء الامتحان: الأقلام، المسطرة، الممحاة، الآلة الحاسبة المسموح بها</div></div></div><div class="info-row"><i class="fas fa-mobile-alt"></i><div><div class="label">الأجهزة الإلكترونية</div><div class="value">يمنع منعًا باتًا إدخال الهواتف النقالة، الأجهزة الذكية، أدوات التصوير، الساعات الإلكترونية، أو أي أدوات غير مصرح بها</div></div></div><div class="info-row"><i class="fas fa-ban"></i><div><div class="label">الأدوات الحادة</div><div class="value">يحظر إدخال الأسلحة أو الأدوات الحادة أو ما يشابهها إلى داخل المركز أو القاعات الامتحانية</div></div></div><div class="info-row"><i class="fas fa-id-card"></i><div><div class="label">بطاقة الهوية</div><div class="value">على كل طالب إحضار بطاقة الهوية الشخصية أو جواز السفر أو رخصة القيادة</div></div></div><div class="info-row"><i class="fas fa-clock"></i><div><div class="label">موعد الحضور</div><div class="value">الحضور قبل نصف ساعة على الأقل من بدء الامتحان، والتواجد في القاعة قبل 10 دقائق</div></div></div><div class="info-row"><i class="fas fa-door-open"></i><div><div class="label">مغادرة القاعة</div><div class="value">لا يسمح بمغادرة قاعة الامتحان قبل انقضاء ثلاثة أرباع زمن الاختبار</div></div></div><div class="info-row"><i class="fas fa-calculator"></i><div><div class="label">الآلات الحاسبة</div><div class="value">يسمح بالآلات الحاسبة العلمية فقط التي لا تكون قابلة للبرمجة والتخزين</div></div></div><div class="info-row"><i class="fas fa-pen"></i><div><div class="label">أقلام الكتابة</div><div class="value">استخدام الأقلام الجافة الزرقاء والسوداء، ويفضل استخدام قلم رصاص في الأسئلة الموضوعية</div></div></div><div class="info-row"><i class="fas fa-user-clock"></i><div><div class="label">التأخير عن الامتحان</div><div class="value">لا يسمح بالدخول إلى القاعة بعد مرور 15 دقيقة من بدء الوقت إلا بإذن من رئيس المركز</div></div></div></div><div style="margin-top:20px;padding:14px;background:linear-gradient(135deg, rgba(212,175,55,0.12), rgba(42,157,143,0.08));border-radius:12px;border:1px solid rgba(212,175,55,0.25);"><p style="text-align:center;font-weight:800;color:var(--dark-blue);margin:0;">نرجوا لجميع الطلاب التوفيق والنجاح في امتحاناتهم، ونسأل الله أن يوفق الجميع لما فيه الخير والفلاح</p></div></div>
   </div>
 
-  <!-- Modal الخيارات والإعدادات -->
-  <div id="optionsModal" class="modal" role="dialog" aria-modal="true">
-    <div class="modal-content">
-      <span class="close" aria-label="إغلاق">&times;</span>
-      <h2 style="text-align:center;color:var(--dark-blue);font-weight:900;margin:10px 0 18px;">الخيارات والإعدادات</h2>
+  <div id="optionsModal" class="modal"><div class="modal-content"><span class="close">&times;</span><h2 style="text-align:center;color:var(--dark-blue);font-weight:900;margin:10px 0 18px;">الخيارات والإعدادات</h2><div style="display:grid;gap:12px;"><button class="nav-btn instructions-btn" onclick="openDailyForBest()" style="width:100%;"><i class="fas fa-calendar-day"></i>بيانات الاختبار اليومية</button><button class="nav-btn dropdown-btn" onclick="window.print()" style="width:100%;"><i class="fas fa-print"></i>طباعة الجدول</button><button class="nav-btn" style="width:100%;background:var(--gradient-primary);" onclick="closeModal(optionsModal)"><i class="fas fa-times"></i>إغلاق</button></div></div></div>
 
-      <div style="display:grid;gap:12px;">
-        <button class="nav-btn instructions-btn" onclick="openDailyForBest()" style="width:100%;"><i class="fas fa-calendar-day"></i>بيانات الاختبار اليومية</button>
-        <button class="nav-btn dropdown-btn" onclick="window.print()" style="width:100%;"><i class="fas fa-print"></i>طباعة الجدول</button>
-        <button class="nav-btn" style="width:100%;background:var(--gradient-primary);" onclick="closeModal(optionsModal)"><i class="fas fa-times"></i>إغلاق</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ✅ شاشة بيانات الاختبار اليومية Full Screen (التصميم الجديد مع العد التنازلي المدمج) -->
-  <div id="dailyExamModal" class="modal daily-fullscreen" role="dialog" aria-modal="true">
-    <div class="modal-content">
-      <div class="close-daily-top" onclick="closeModal(dailyExamModal)" aria-label="إغلاق الشاشة">
-        <i class="fas fa-times"></i>
-      </div>
-      
-      <div class="daily-header">
-        <div class="daily-header-content">
-          <div class="daily-main-title">امتحان دبلوم التعليم العام</div>
-          <div class="daily-sub-title">الفصل الدراسي الأول - الدور الأول</div>
-          <div class="header-divider"></div>
-          <div class="daily-year-info">العام الدراسي 1447/1448هـ - 2025/2026م</div>
-        </div>
-      </div>
-
-      <div class="daily-body">
-        <!-- حالة اليوم واليوم -->
-        <div class="exam-status-container">
-          <div class="exam-day-display" id="dailyExamDay">
-            <i class="fas fa-calendar-alt"></i>
-            <span id="dailyDayText">--</span>
-          </div>
-          <div class="exam-status-badge upcoming" id="dailyExamStatus">
-            <i class="fas fa-circle" id="dailyStatusIcon"></i>
-            <span id="dailyStatusText">--</span>
-          </div>
-        </div>
-
-        <!-- ✅ بيانات الامتحان مع العد التنازلي المدمج -->
-        <div class="exam-data-container">
-          <div class="exam-subject" id="dailyExamSubject">--</div>
-          
-          <div class="exam-details-grid">
-            <!-- اليوم والتاريخ -->
-            <div class="exam-detail-item">
-              <div class="detail-label">
-                <i class="fas fa-calendar-day"></i>
-                اليوم والتاريخ
-              </div>
-              <div class="detail-value" id="dailyDayDate">--</div>
-            </div>
-            
-            <!-- وقت الإجابة -->
-            <div class="exam-detail-item">
-              <div class="detail-label">
-                <i class="fas fa-clock"></i>
-                وقت الإجابة
-              </div>
-              <div class="detail-value" id="dailyExamTime">--</div>
-            </div>
-            
-            <!-- زمن الإجابة -->
-            <div class="exam-detail-item">
-              <div class="detail-label">
-                <i class="fas fa-stopwatch"></i>
-                زمن الإجابة
-              </div>
-              <div class="detail-value" id="dailyExamDuration">--</div>
-            </div>
-            
-            <!-- ✅ العد التنازلي كجزء من بيانات الامتحان -->
-            <div class="countdown-container">
-              <div class="countdown-title">
-                <i class="fas fa-hourglass-half"></i>
-                <span>العد التنازلي</span>
-              </div>
-              <div class="countdown-display upcoming" id="dailyCountdownDisplay">--</div>
-              <div class="countdown-hint" id="dailyCountdownHint">--</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div id="dailyExamModal" class="modal daily-fullscreen"><div class="modal-content"><div class="close-daily-top" onclick="closeModal(dailyExamModal)"><i class="fas fa-times"></i></div><div class="daily-header"><div class="daily-header-content"><div class="daily-main-title">امتحان دبلوم التعليم العام</div><div class="daily-sub-title">الفصل الدراسي الثاني - الدور الأول</div><div class="header-divider"></div><div class="daily-year-info">العام الدراسي 1447/1448هـ - 2025/2026م</div></div></div><div class="daily-body"><div class="exam-status-container"><div class="exam-day-display"><i class="fas fa-calendar-alt"></i><span id="dailyDayText">--</span></div><div class="exam-status-badge upcoming" id="dailyExamStatus"><i class="fas fa-circle" id="dailyStatusIcon"></i><span id="dailyStatusText">--</span></div></div><div class="exam-data-container"><div class="exam-subject" id="dailyExamSubject">--</div><div class="exam-details-grid"><div class="exam-detail-item"><div class="detail-label"><i class="fas fa-calendar-day"></i>اليوم والتاريخ</div><div class="detail-value" id="dailyDayDate">--</div></div><div class="exam-detail-item"><div class="detail-label"><i class="fas fa-clock"></i>وقت الإجابة</div><div class="detail-value" id="dailyExamTime">--</div></div><div class="exam-detail-item"><div class="detail-label"><i class="fas fa-stopwatch"></i>زمن الإجابة</div><div class="detail-value" id="dailyExamDuration">--</div></div><div class="countdown-container"><div class="countdown-title"><i class="fas fa-hourglass-half"></i><span>العد التنازلي</span></div><div class="countdown-display upcoming" id="dailyCountdownDisplay">--</div><div class="countdown-hint" id="dailyCountdownHint">--</div></div></div></div></div></div></div></div>
 
   <script>
     const instructionsModal = document.getElementById("instructionsModal");
     const optionsModal = document.getElementById("optionsModal");
     const dailyExamModal = document.getElementById("dailyExamModal");
-
-    const instructionsBtn = document.getElementById("instructionsBtn");
-    const optionsBtn = document.getElementById("optionsBtn");
-
     const closeEls = document.getElementsByClassName("close");
-
-    // عناصر شاشة اليوم الجديدة
     const dailyDayText = document.getElementById("dailyDayText");
     const dailyDayDate = document.getElementById("dailyDayDate");
     const dailyExamSubject = document.getElementById("dailyExamSubject");
@@ -1315,253 +846,72 @@
     const dailyCountdownHint = document.getElementById("dailyCountdownHint");
     const dailyCountdownDisplay = document.getElementById("dailyCountdownDisplay");
 
-    // بيانات الامتحانات
+    // بيانات الامتحانات المصححة للفصل الدراسي الثاني
     const exams = [
-      { id: 1, day: "الأربعاء", date: "31/12/2025", subject: "اللغة العربية", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2025, 11, 31, 8, 0, 0), end: new Date(2025, 11, 31, 11, 0, 0), duration: "3 ساعات" },
-      { id: 2, day: "الخميس", date: "1/1/2026", subject: "التربية الإسلامية", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 0, 1, 8, 0, 0), end: new Date(2026, 0, 1, 11, 0, 0), duration: "3 ساعات" },
-      { id: 3, day: "الأحد", date: "4/1/2026", subject: "الرياضيات الأساسية / الرياضيات المتقدمة", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 0, 4, 8, 0, 0), end: new Date(2026, 0, 4, 11, 0, 0), duration: "3 ساعات" },
-      { id: 4, day: "الاثنين", date: "5/1/2026", subject: "التاريخ (العالم من حولي)", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 0, 5, 8, 0, 0), end: new Date(2026, 0, 5, 11, 0, 0), duration: "3 ساعات" },
-      { id: 5, day: "الثلاثاء", date: "6/1/2026", subject: "الكيمياء", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 0, 6, 8, 0, 0), end: new Date(2026, 0, 6, 11, 0, 0), duration: "3 ساعات" },
-      { id: 6, day: "الأربعاء", date: "7/1/2026", subject: "الجغرافيا والتقنيات الحديثة", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 0, 7, 8, 0, 0), end: new Date(2026, 0, 7, 11, 0, 0), duration: "3 ساعات" },
-      { id: 7, day: "الخميس", date: "8/1/2026", subject: "الأحياء", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 0, 8, 8, 0, 0), end: new Date(2026, 0, 8, 11, 0, 0), duration: "3 ساعات" },
-      { id: 8, day: "الأحد", date: "11/1/2026", subject: "الفيزياء", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 0, 11, 8, 0, 0), end: new Date(2026, 0, 11, 11, 0, 0), duration: "3 ساعات" },
-      { id: 9, day: "الإثنين", date: "12/1/2026", subject: "العلوم والبيئة", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 0, 12, 8, 0, 0), end: new Date(2026, 0, 12, 11, 0, 0), duration: "3 ساعات" },
-      { id: 10, day: "الثلاثاء", date: "13/1/2026", subject: "اللغة الإنجليزية", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 0, 13, 8, 0, 0), end: new Date(2026, 0, 13, 11, 0, 0), duration: "3 ساعات" },
-      { id: 11, day: "الأربعاء", date: "14/1/2026", subject: "الدراسات الاجتماعية (هذا وطني)", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 0, 14, 8, 0, 0), end: new Date(2026, 0, 14, 11, 0, 0), duration: "3 ساعات" },
+      { id: 1, day: "الخميس", date: "11/6/2026", subject: "الرياضيات الأساسية / الرياضيات المتقدمة", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 5, 11, 8, 0, 0), end: new Date(2026, 5, 11, 11, 0, 0), duration: "3 ساعات" },
+      { id: 2, day: "الأحد", date: "14/6/2026", subject: "اللغة العربية", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 5, 14, 8, 0, 0), end: new Date(2026, 5, 14, 11, 0, 0), duration: "3 ساعات" },
+      { id: 3, day: "الاثنين", date: "15/6/2026", subject: "اللغة الإنجليزية", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 5, 15, 8, 0, 0), end: new Date(2026, 5, 15, 11, 0, 0), duration: "3 ساعات" },
+      { id: 4, day: "الثلاثاء", date: "16/6/2026", subject: "التاريخ (العالم من حولي)", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 5, 16, 8, 0, 0), end: new Date(2026, 5, 16, 11, 0, 0), duration: "3 ساعات" },
+      { id: 5, day: "الأربعاء", date: "17/6/2026", subject: "الكيمياء", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 5, 17, 8, 0, 0), end: new Date(2026, 5, 17, 11, 0, 0), duration: "3 ساعات" },
+      { id: 6, day: "الأحد", date: "21/6/2026", subject: "الفيزياء", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 5, 21, 8, 0, 0), end: new Date(2026, 5, 21, 11, 0, 0), duration: "3 ساعات" },
+      { id: 7, day: "الاثنين", date: "22/6/2026", subject: "التربية الإسلامية", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 5, 22, 8, 0, 0), end: new Date(2026, 5, 22, 11, 0, 0), duration: "3 ساعات" },
+      { id: 8, day: "الثلاثاء", date: "23/6/2026", subject: "العلوم البيئية", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 5, 23, 8, 0, 0), end: new Date(2026, 5, 23, 11, 0, 0), duration: "3 ساعات" },
+      { id: 9, day: "الأربعاء", date: "24/6/2026", subject: "الأحياء", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 5, 24, 8, 0, 0), end: new Date(2026, 5, 24, 11, 0, 0), duration: "3 ساعات" },
+      { id: 10, day: "الخميس", date: "25/6/2026", subject: "الجغرافيا والتقنيات الحديثة", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 5, 25, 8, 0, 0), end: new Date(2026, 5, 25, 11, 0, 0), duration: "3 ساعات" },
+      { id: 11, day: "الأحد", date: "28/6/2026", subject: "الدراسات الاجتماعية (هذا وطني)", time: "8:00 صباحًا - 11:00 صباحًا", start: new Date(2026, 5, 28, 8, 0, 0), end: new Date(2026, 5, 28, 11, 0, 0), duration: "3 ساعات" }
     ];
 
-    function openModal(modal) {
-      modal.style.display = "block";
-      document.body.style.overflow = "hidden";
-      document.documentElement.style.overflow = "hidden";
-    }
-    
-    function closeModal(modal) {
-      modal.style.display = "none";
-      document.body.style.overflow = "auto";
-      document.documentElement.style.overflow = "auto";
-      if (modal === dailyExamModal && window.__dailyInt) {
-        clearInterval(window.__dailyInt);
-      }
-    }
+    function openModal(modal) { modal.style.display = "block"; document.body.style.overflow = "hidden"; }
+    function closeModal(modal) { modal.style.display = "none"; document.body.style.overflow = "auto"; if (modal === dailyExamModal && window.__dailyInt) clearInterval(window.__dailyInt); }
 
-    instructionsBtn.onclick = () => openModal(instructionsModal);
-    optionsBtn.onclick = () => openModal(optionsModal);
-
-    for (let i = 0; i < closeEls.length; i++) {
-      closeEls[i].onclick = function() {
-        if (this.closest('#instructionsModal')) closeModal(instructionsModal);
-        if (this.closest('#optionsModal')) closeModal(optionsModal);
-        if (this.closest('#dailyExamModal')) closeModal(dailyExamModal);
-      };
-    }
-
-    window.onclick = (e) => {
-      if (e.target === instructionsModal) closeModal(instructionsModal);
-      if (e.target === optionsModal) closeModal(optionsModal);
-      if (e.target === dailyExamModal) closeModal(dailyExamModal);
-    };
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        closeModal(instructionsModal);
-        closeModal(optionsModal);
-        closeModal(dailyExamModal);
-      }
-    });
+    document.getElementById("instructionsBtn").onclick = () => openModal(instructionsModal);
+    document.getElementById("optionsBtn").onclick = () => openModal(optionsModal);
+    for (let i = 0; i < closeEls.length; i++) { closeEls[i].onclick = function() { if (this.closest('#instructionsModal')) closeModal(instructionsModal); if (this.closest('#optionsModal')) closeModal(optionsModal); if (this.closest('#dailyExamModal')) closeModal(dailyExamModal); }; }
+    window.onclick = (e) => { if (e.target === instructionsModal) closeModal(instructionsModal); if (e.target === optionsModal) closeModal(optionsModal); if (e.target === dailyExamModal) closeModal(dailyExamModal); };
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeModal(instructionsModal); closeModal(optionsModal); closeModal(dailyExamModal); } });
 
     function updateDateTime() {
       const now = new Date();
       const timeEl = document.querySelector("#currentTime span");
       const dateEl = document.querySelector("#currentDate span");
-
-      let h = now.getHours();
-      const ampm = h >= 12 ? "م" : "ص";
-      h = h % 12; h = h ? h : 12;
-      const m = String(now.getMinutes()).padStart(2, "0");
-      const s = String(now.getSeconds()).padStart(2, "0");
+      let h = now.getHours(); const ampm = h >= 12 ? "م" : "ص"; h = h % 12 || 12;
+      const m = String(now.getMinutes()).padStart(2, "0"); const s = String(now.getSeconds()).padStart(2, "0");
       timeEl.textContent = `${h}:${m}:${s} ${ampm}`;
-
       const days = ["الأحد","الإثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
       const months = ["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
       dateEl.textContent = `${days[now.getDay()]}، ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
     }
 
-    function formatDiff(ms) {
-      const total = Math.max(0, ms);
-      const days = Math.floor(total / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((total % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((total % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((total % (1000 * 60)) / 1000);
-      
-      if (days > 0) {
-        return `${days} يوم ${hours} س ${minutes} د`;
-      }
-      if (hours > 0) {
-        return `${hours} س ${minutes} د ${seconds} ث`;
-      }
-      return `${minutes} د ${seconds} ث`;
-    }
+    function formatDiff(ms) { const total = Math.max(0, ms); const days = Math.floor(total / (86400000)); const hours = Math.floor((total % 86400000) / 3600000); const minutes = Math.floor((total % 3600000) / 60000); const seconds = Math.floor((total % 60000) / 1000); if (days > 0) return `${days} يوم ${hours} س ${minutes} د`; if (hours > 0) return `${hours} س ${minutes} د ${seconds} ث`; return `${minutes} د ${seconds} ث`; }
 
     function setRowBadgeAndClass(exam, state) {
-      const row = document.getElementById(`exam${exam.id}`);
-      if (!row) return;
-
-      row.classList.remove("exam-upcoming","exam-active","exam-finished");
-      row.classList.add(`exam-${state}`);
-
-      let badge = row.querySelector(".badge");
-      if (!badge) {
-        badge = document.createElement("div");
-        badge.className = "badge";
-        row.appendChild(badge);
-      }
-      badge.classList.remove("upcoming","active","finished");
-      badge.classList.add(state);
-
-      if (state === "upcoming") badge.textContent = "قادم";
-      if (state === "active") badge.textContent = "الآن";
-      if (state === "finished") badge.textContent = "انتهى";
+      const row = document.getElementById(`exam${exam.id}`); if (!row) return;
+      row.classList.remove("exam-upcoming","exam-active","exam-finished"); row.classList.add(`exam-${state}`);
+      let badge = row.querySelector(".badge"); if (!badge) { badge = document.createElement("div"); badge.className = "badge"; row.appendChild(badge); }
+      badge.classList.remove("upcoming","active","finished"); badge.classList.add(state);
+      badge.textContent = state === "upcoming" ? "قادم" : state === "active" ? "الآن" : "انتهى";
     }
 
     function updateCountdowns() {
       const now = new Date();
-
       exams.forEach(exam => {
-        const el = document.getElementById(`countdown${exam.id}`);
-        const row = document.getElementById(`exam${exam.id}`);
-        if (!el || !row) return;
-
-        const text = el.querySelector(".countdown-text");
-        const dot = el.querySelector(".status-dot");
-
-        el.classList.remove("upcoming","active","finished");
-        dot.classList.remove("dot-upcoming","dot-active","dot-finished");
-        row.classList.remove("exam-active-row");
-
-        if (now < exam.start) {
-          const diff = exam.start - now;
-          text.textContent = `يبدأ بعد: ${formatDiff(diff)}`;
-          el.classList.add("upcoming");
-          dot.classList.add("dot-upcoming");
-          setRowBadgeAndClass(exam, "upcoming");
-        } else if (now >= exam.start && now <= exam.end) {
-          const diff = exam.end - now;
-          text.textContent = `متبقي: ${formatDiff(diff)}`;
-          el.classList.add("active");
-          dot.classList.add("dot-active");
-          row.classList.add("exam-active-row");
-          setRowBadgeAndClass(exam, "active");
-        } else {
-          text.textContent = "انتهى";
-          el.classList.add("finished");
-          dot.classList.add("dot-finished");
-          setRowBadgeAndClass(exam, "finished");
-        }
+        const el = document.getElementById(`countdown${exam.id}`); const row = document.getElementById(`exam${exam.id}`); if (!el || !row) return;
+        const text = el.querySelector(".countdown-text"); const dot = el.querySelector(".status-dot");
+        el.classList.remove("upcoming","active","finished"); dot.classList.remove("dot-upcoming","dot-active","dot-finished"); row.classList.remove("exam-active-row");
+        if (now < exam.start) { const diff = exam.start - now; text.textContent = `يبدأ بعد: ${formatDiff(diff)}`; el.classList.add("upcoming"); dot.classList.add("dot-upcoming"); setRowBadgeAndClass(exam, "upcoming"); }
+        else if (now >= exam.start && now <= exam.end) { const diff = exam.end - now; text.textContent = `متبقي: ${formatDiff(diff)}`; el.classList.add("active"); dot.classList.add("dot-active"); row.classList.add("exam-active-row"); setRowBadgeAndClass(exam, "active"); }
+        else { text.textContent = "انتهى"; el.classList.add("finished"); dot.classList.add("dot-finished"); setRowBadgeAndClass(exam, "finished"); }
       });
     }
 
-    // ✅ شاشة اليوم: من زر كل بطاقة
-    function openDailyForId(id) {
-      const exam = exams.find(e => e.id === id);
-      if (!exam) return;
-      openDaily(exam);
-    }
+    function openDailyForId(id) { openDaily(exams.find(e => e.id === id)); }
+    function openDailyForBest() { const now = new Date(); const today = exams.find(ex => ex.start.toDateString() === now.toDateString()); const next = exams.find(ex => now < ex.end); openDaily(today || next || exams[0]); }
+    function computeState(exam, now) { if (now < exam.start) return "upcoming"; if (now >= exam.start && now <= exam.end) return "active"; return "finished"; }
+    function renderDaily(exam) { const now = new Date(); const state = computeState(exam, now); dailyDayText.textContent = exam.day; dailyDayDate.textContent = `${exam.day} - ${exam.date}`; dailyExamSubject.textContent = exam.subject; dailyExamTime.textContent = exam.time; dailyExamDuration.textContent = exam.duration; dailyExamStatus.classList.remove("upcoming","active","finished"); dailyExamStatus.classList.add(state); dailyStatusText.textContent = state === "upcoming" ? "قادم" : state === "active" ? "الآن" : "انتهى"; dailyStatusIcon.className = state === "active" ? "fas fa-play-circle" : "fas fa-circle"; dailyCountdownDisplay.classList.remove("upcoming","active","finished"); dailyCountdownDisplay.classList.add(state); dailyCountdownHint.textContent = state === "upcoming" ? "العد التنازلي لبداية الامتحان" : state === "active" ? "العد التنازلي لنهاية الامتحان" : "انتهى وقت الامتحان"; }
+    function tickDaily(exam) { const now = new Date(); const state = computeState(exam, now); dailyCountdownDisplay.textContent = state === "upcoming" ? `يبدأ بعد: ${formatDiff(exam.start - now)}` : state === "active" ? `متبقي: ${formatDiff(exam.end - now)}` : "انتهى"; const pillState = dailyExamStatus.classList.contains("active") ? "active" : dailyExamStatus.classList.contains("upcoming") ? "upcoming" : "finished"; if (pillState !== state) renderDaily(exam); }
+    function openDaily(exam) { openModal(dailyExamModal); renderDaily(exam); tickDaily(exam); if (window.__dailyInt) clearInterval(window.__dailyInt); window.__dailyInt = setInterval(() => tickDaily(exam), 1000); }
 
-    // ✅ شاشة اليوم: أفضل اختيار (امتحان اليوم أو القادم)
-    function openDailyForBest() {
-      const now = new Date();
-      const todayKey = `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}`;
-      const today = exams.find(ex => {
-        const examKey = `${ex.start.getFullYear()}-${ex.start.getMonth()}-${ex.start.getDate()}`;
-        return examKey === todayKey;
-      });
-      const next = exams.find(ex => now < ex.end);
-      openDaily(today || next || exams[0]);
-    }
-
-    function computeState(exam, now) {
-      if (now < exam.start) return "upcoming";
-      if (now >= exam.start && now <= exam.end) return "active";
-      return "finished";
-    }
-
-    function renderDaily(exam) {
-      const now = new Date();
-      const state = computeState(exam, now);
-
-      // تحديث البيانات الأساسية
-      dailyDayText.textContent = exam.day;
-      dailyDayDate.textContent = `${exam.day} - ${exam.date}`;
-      dailyExamSubject.textContent = exam.subject;
-      dailyExamTime.textContent = exam.time;
-      dailyExamDuration.textContent = exam.duration;
-      
-      // تحديث حالة الامتحان
-      dailyExamStatus.classList.remove("upcoming","active","finished");
-      dailyExamStatus.classList.add(state);
-      
-      const statusLabel = state === "upcoming" ? "قادم" : state === "active" ? "الآن" : "انتهى";
-      dailyStatusText.textContent = statusLabel;
-      dailyStatusIcon.className = state === "active" ? "fas fa-play-circle" : "fas fa-circle";
-
-      // تحديث العداد التنازلي
-      dailyCountdownDisplay.classList.remove("upcoming","active","finished");
-      dailyCountdownDisplay.classList.add(state);
-
-      if (state === "upcoming") {
-        dailyCountdownHint.textContent = "العد التنازلي لبداية الامتحان";
-      } else if (state === "active") {
-        dailyCountdownHint.textContent = "العد التنازلي لنهاية الامتحان";
-      } else {
-        dailyCountdownHint.textContent = "انتهى وقت الامتحان";
-      }
-    }
-
-    function tickDaily(exam) {
-      const now = new Date();
-      const state = computeState(exam, now);
-
-      if (state === "upcoming") {
-        dailyCountdownDisplay.textContent = `يبدأ بعد: ${formatDiff(exam.start - now)}`;
-      } else if (state === "active") {
-        dailyCountdownDisplay.textContent = `متبقي: ${formatDiff(exam.end - now)}`;
-      } else {
-        dailyCountdownDisplay.textContent = "انتهى";
-      }
-
-      // تحديث الحالة بصرياً إذا تغيرت
-      const pillState = dailyExamStatus.classList.contains("active") ? "active" :
-                       dailyExamStatus.classList.contains("upcoming") ? "upcoming" : "finished";
-      if (pillState !== state) renderDaily(exam);
-    }
-
-    function openDaily(exam) {
-      openModal(dailyExamModal);
-      renderDaily(exam);
-      tickDaily(exam);
-
-      if (window.__dailyInt) clearInterval(window.__dailyInt);
-      window.__dailyInt = setInterval(() => tickDaily(exam), 1000);
-    }
-
-    function init() {
-      updateDateTime();
-      updateCountdowns();
-      setInterval(updateDateTime, 1000);
-      setInterval(updateCountdowns, 1000);
-
-      // افتراضي: جهّز شارات الهاتف للبطاقات
-      exams.forEach(ex => setRowBadgeAndClass(ex, "upcoming"));
-      
-      // افتح شاشة اليوم تلقائياً إذا كان هناك امتحان نشط
-      const now = new Date();
-      const activeExam = exams.find(ex => now >= ex.start && now <= ex.end);
-      if (activeExam) {
-        setTimeout(() => openDaily(activeExam), 1000);
-      }
-    }
-
+    function init() { updateDateTime(); updateCountdowns(); setInterval(updateDateTime, 1000); setInterval(updateCountdowns, 1000); exams.forEach(ex => setRowBadgeAndClass(ex, "upcoming")); const now = new Date(); const activeExam = exams.find(ex => now >= ex.start && now <= ex.end); if (activeExam) setTimeout(() => openDaily(activeExam), 1000); }
     document.addEventListener("DOMContentLoaded", init);
   </script>
 </body>
